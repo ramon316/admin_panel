@@ -13,7 +13,7 @@ $links =[
 [
 'name' => 'Dashboard',
 'href' => route('admin.dashboard'),
-'active' => request()->routeIs('admin.dashboard'),
+'active' => '',
 ]
 ] */
 ],
@@ -36,7 +36,7 @@ $links =[
                 @elseif(isset($link['submenu']))
             <li>
                 <button type="button"
-                    class="w-full p-2 text-gray-600 rounded-lg text-left dark:text-gray-700 hover:bg-gray-300 dark:hover:bg-gray-700 group flex justify-between items-center {{ $link['active'] ? 'bg-gray-400' : '' }}"
+                    class="w-full p-2 rounded-lg text-left flex items-center justify-between group text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 {{ $link['active'] ? 'dark:bg-slate-300 dark:text-gray-700 dark:hover:bg-gray-500' : '' }}"
                     aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
 
                     <!-- Contenedor para ícono y texto (al inicio) -->
@@ -62,7 +62,7 @@ $links =[
             </li>
             @else
             <a href="{{ $link['href'] }}"
-                class="flex items-center p-2 text-gray-600 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group {{ $link['active'] ? 'bg-gray-100' : '' }}">
+                class="flex items-center p-2 text-gray-600 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group {{ $link['active'] ? 'bg-gray-100 dark:bg-gray-700' : '' }}">
                 <span class="w-6 h-6 inline-flex justify-center items-center">
                     <i class="{{ $link['icon'] }}"></i>
                 </span>
